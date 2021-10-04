@@ -22,7 +22,7 @@ class Die {
     ellipse(myX+11,myY,10,10);//mid right
     */
     
-    int number = 3;//(int)(Math.random()*6)+1; 
+    int number = (int)(Math.random()*6)+1; 
     
     if(number == 1){
       ellipse(myX,myY,10,10);//center
@@ -33,6 +33,24 @@ class Die {
       ellipse(myX,myY,10,10);//center
       ellipse(myX-11,myY-11,10,10);//upper left
       ellipse(myX+11,myY+11,10,10);//bottom right
+    } else if (number == 4){ // 2 AND 2 other dots
+      ellipse(myX-11,myY-11,10,10);//upper left
+      ellipse(myX-11,myY+11,10,10);//bottom left
+      ellipse(myX+11,myY-11,10,10);//upper right
+      ellipse(myX+11,myY+11,10,10);//bottom right
+    } else if (number == 5){ // 4 AND 1
+      ellipse(myX-11,myY-11,10,10);//upper left
+      ellipse(myX-11,myY+11,10,10);//bottom left
+      ellipse(myX+11,myY-11,10,10);//upper right
+      ellipse(myX+11,myY+11,10,10);//bottom right
+      ellipse(myX,myY,10,10);//center
+    } else { // 4 AND 2 other dots
+      ellipse(myX-11,myY-11,10,10);//upper left
+      ellipse(myX-11,myY+11,10,10);//bottom left
+      ellipse(myX+11,myY-11,10,10);//upper right
+      ellipse(myX+11,myY+11,10,10);//bottom right
+      ellipse(myX-11,myY,10,10);//mid left
+      ellipse(myX+11,myY,10,10);//mid right
     }
   }
   
@@ -53,4 +71,5 @@ void draw(){
 }
 
 void mousePressed(){
+  redraw();
 }
