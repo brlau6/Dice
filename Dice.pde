@@ -7,9 +7,10 @@ class Die {
   void roll(){
   }
   void show(){
-    fill(255);
-    rect(myX-25,myY-25,50,50,12);
     fill(0);
+    rect(myX-25,myY-25,50,50,12);
+    
+    fill((int)(Math.random()*256),(int)(Math.random()*256),(int)(Math.random()*256));
     
     //all dots
     /*
@@ -53,21 +54,27 @@ class Die {
       ellipse(myX+11,myY,10,10);//mid right
     }
   }
-  
 }
 
-Die test;
-
 void setup(){
-  size(400,400);
+  size(500,500);
   background(100,100,100);
   noLoop();
   noStroke();
 }
 
 void draw(){
-  test = new Die(100,100);
-  test.show();
+  for(int y = 40; y < 450; y = y + 60){
+    for(int x = 50; x < 475; x = x + 60){
+      if((y-40)%120 == 0){
+        Die test = new Die(x-25,y);
+        test.show();
+      } else {
+        Die test = new Die(x,y);
+        test.show();
+      }
+    }
+  }
 }
 
 void mousePressed(){
