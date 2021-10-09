@@ -126,7 +126,7 @@ void draw() {
         test.show();
       }
     }
-    for (int x = 130; x < 375; x = x + 60) {
+    for (int x = 130; x < 375; x = x + 60) { //straight mouth
       Die test = new Die(x, 340);
       test.roll();
       test.show();
@@ -162,7 +162,7 @@ void draw() {
       test.roll();
       test.show();
     }
-    for (int x = 130; x < 375; x = x + 60) {//straight face
+    for (int x = 130; x < 375; x = x + 60) {//straight mouth
       Die test = new Die(x, 340);
       test.roll();
       test.show();
